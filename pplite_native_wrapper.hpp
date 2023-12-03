@@ -39,15 +39,15 @@ namespace pplite_domains {
   The listed enum values are up-to-date with PPLite 0.11.
   Note: even values are for domains; odd values for _STATS variants.
 */
-enum pplite_domain_id_t : unsigned int {
-  POLY, POLY_STATS,
-  B_POLY, B_POLY_STATS,
-  F_POLY, F_POLY_STATS,
-  U_POLY, U_POLY_STATS,
-  UF_POLY, UF_POLY_STATS,
-  P_SET, P_SET_STATS,
-  FP_SET, FP_SET_STATS
-};
+// enum pplite_domain_id_t : unsigned int {
+//   POLY, POLY_STATS,
+//   B_POLY, B_POLY_STATS,
+//   F_POLY, F_POLY_STATS,
+//   U_POLY, U_POLY_STATS,
+//   UF_POLY, UF_POLY_STATS,
+//   P_SET, P_SET_STATS,
+//   FP_SET, FP_SET_STATS
+// };
 } // namespace pplite_domains
 } // namespace domains
 } // namespace crab
