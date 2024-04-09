@@ -484,6 +484,9 @@ private:
       case linear_constraint_t::DISEQUATION:
         CRAB_ERROR("conversion to Con not supported for disequations");
       }
+#if defined(__GNUC__) || defined(__GNUG__)
+    __builtin_unreachable(); // to make gcc happy
+#endif            
     };
 
     // Note: no need to keep denominator (even when is_real() holds).
@@ -568,6 +571,9 @@ private:
       case Con::STRICT_INEQUALITY:
         return  linear_constraint_t::STRICT_INEQUALITY;
       }
+#if defined(__GNUC__) || defined(__GNUG__)
+    __builtin_unreachable(); // to make gcc happy
+#endif
     };
     auto expr = to_linear_expression(con.linear_expr(), con.inhomo_term());
     auto kind = to_kind(con.type());
@@ -1098,7 +1104,7 @@ public:
     );
 
     Index_Set to_remove;
-    for (const auto v : vars) {
+    for (const auto &v : vars) {
       if (auto d = m_var_map.get_var_dim(v))
         to_remove.set(*d);
     }
